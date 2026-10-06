@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <p class="badge">LANGGRAPH • FASTAPI • QWEN</p>
+            <h1>AI Travel Planner</h1>
+            <p class="subtitle">
+                Research the web, check travel data, generate an itinerary,
+                and let a critic review and replan it.
+            </p>
+        </section>
+
+        <section class="card">
+            <label for="query">Describe your trip</label>
+            <textarea id="query" rows="6">Plan a 4 day trip from Kochi to Dubai for 2 people with a budget of 80000 INR. I like shopping, food and sightseeing.</textarea>
+            <button id="planBtn" onclick="createPlan()">Plan My Trip</button>
+            <p id="status"></p>
+        </section>
+
+        <section id="result" class="card result hidden">
+            <div class="stats">
+                <div><span>Destination</span><strong id="destination">-</strong></div>
+                <div><span>Days</span><strong id="days">-</strong></div>
+                <div><span>Budget</span><strong id="budget">-</strong></div>
+                <div><span>Critic</span><strong id="critic">-</strong></div>
+            </div>
+
+            <h2>Final Travel Plan</h2>
+            <pre id="itinerary"></pre>
+
+            <div class="critic-box">
+                <h3>Agent Critic Feedback</h3>
+                <p id="feedback"></p>
+                <p><strong>Replanning attempts:</strong> <span id="attempts">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
